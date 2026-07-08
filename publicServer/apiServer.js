@@ -6,7 +6,8 @@ import express from "express";
 const packageDefinition = protoLoader.loadSync("../proto/helloworld.proto");
 const proto = grpc.loadPackageDefinition(packageDefinition);
 
-// client to call the rpc server
+// client to call the rpc server, a client must be greated for each individual service regardless if they're registered to the same server.
+//! even though we are creating a different client for different services, they will still reuse the same http2 channels required to send information between different servers. the client is just creating a stub in order for the data to be correctly serialized between the different servers
 const greeterClient = new proto.greeter.Greeter(
   "localhost:3001",
   grpc.credentials.createInsecure(),
