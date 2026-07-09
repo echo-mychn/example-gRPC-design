@@ -8,13 +8,13 @@ src will contain typescript examples with static codegen files from the protoc c
 ## Getting Started
 Install dependencies using npm
 ### JS + Dynamic Code Gen example
-Run the gRPC server using node /js-example/grpcServer/server.js
-Run the public API server using node /js-example/publicServer/apiServer.js
+1. Run the gRPC server using node /js-example/grpcServer/server.js
+2. Run the public API server using node /js-example/publicServer/apiServer.js
 
 ### TS + Static Code Gen example
-Compile the ts files using tsc
-Run the gRPC server using node /dist/grpcServer/index.js
-Run the public API server using node /dist/publicServer/index.js
+1. Compile the ts files using tsc
+2. Run the gRPC server using node /dist/grpcServer/index.js
+3. Run the public API server using node /dist/publicServer/index.js
 
 ## Routes
 > * `GET /api/hello`: returns JSON object containing "Ethan"
