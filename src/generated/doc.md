@@ -14,7 +14,9 @@ protoc \
   ./proto/*.proto
 ```
 
-will compile all proto files in the proto directory and generate ts files to the directory /src/generated
+compiles all proto files in the proto directory and generate ts files to the directory /src/generated<br/>
+### IMPORTANT
+The protoc compilier does not come with typescript support out of the box. You must install a third-party plugin like ts-proto in order for it to compile proto files into typescript
 
 Generated client files from protoc compilier. This replaces the loading process on the rpc server
 Dynamic codegen loads proto file directly into the server and then register the service to the server
