@@ -1,4 +1,25 @@
-# Notes
+# Example gRPC design
+
+## Examples
+js-example includes dynamic codegen examples and javascript only implementations
+<br/>
+src will contain typescript examples with static codegen files from the protoc compilier
+
+## Getting Started
+Install dependencies using npm
+### JS + Dynamic Code Gen example
+Run the gRPC server using node /js-example/grpcServer/server.js
+Run the public API server using node /js-example/publicServer/apiServer.js
+
+### TS + Static Code Gen example
+Compile the ts files using tsc
+Run the gRPC server using node /dist/grpcServer/index.js
+Run the public API server using node /dist/publicServer/index.js
+
+## Routes
+> * `GET /api/hello`: returns JSON object containing "Ethan"
+> * `GET /api/hello/:name`: returns JSON object containing param inputted
+> * `GET /api/letters/:name`: returns JSON object containing array of name split into letters
 
 ## System Design
 System design for a gRPC server should be layered in 3 different components:
@@ -18,7 +39,3 @@ Think of these files as the model of your data for each different service. Each 
 ## Express Implementation
 The only component that will be utilizing express will be the client server (API Gateway). This handles accepting REST requests and calling the correct gRPC service from the gRPC server. That requires the API Gateway to load the same proto files that the gRPC server has in order to call the correct gRPC service in each route.
 
-## Examples
-js-example includes dynamic codegen examples and javascript only implementations
-<br/>
-src will contain typescript examples with static codegen files from the protoc compilier
